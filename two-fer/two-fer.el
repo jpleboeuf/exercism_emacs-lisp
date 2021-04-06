@@ -4,6 +4,11 @@
 
 ;;; Code:
 
+(defun two-fer (&optional name)
+  (setq name (or name "you"))
+  (format "One for %s, one for me." name)
+  )
 
 (provide 'two-fer)
+
 ;;; two-fer.el ends here
