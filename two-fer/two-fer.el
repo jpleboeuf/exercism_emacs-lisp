@@ -5,7 +5,7 @@
 ;;; Code:
 
 (defun two-fer (&optional name)
-  (setq name (or name "you"))
+  (unless name (setq name "you"))
   (format "One for %s, one for me." name)
   )
 
