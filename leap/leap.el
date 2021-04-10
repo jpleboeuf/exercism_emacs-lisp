@@ -4,12 +4,20 @@
 
 ;;; Code:
 
+(defsubst divp (a b)
+  (zerop (% a b))
+  )
+
+(defsubst !divp (a b)
+  (not (divp a b))
+  )
+
 (defun leap-year-p (y)
   (and
-   (zerop (% y 4))
+   (divp y 4)
    (or
-    (not (zerop (% y 100)))
-    (zerop (% y 400))
+    (!divp y 100)
+    (divp y 400)
     )
    )
   )
