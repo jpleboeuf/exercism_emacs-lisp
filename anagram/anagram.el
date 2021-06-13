@@ -4,8 +4,24 @@
 
 ;;; Code:
 
-(require 'cl-lib)
+(defsubst word-sig (word)
+  (sort (mapcar 'char-to-string word) 'string-lessp)
+  )
 
+(defun anagrams-for (word candidates)
+  (setq word_dc (downcase word))
+  (setq word_dc_sig (word-sig word_dc))
+  (seq-filter
+   (lambda (w)
+     (setq w_dc (downcase w))
+     (and
+      (equal (word-sig w_dc) word_dc_sig)
+      (not (string= w_dc word_dc))
+      )
+     )
+   candidates)
+  )
 
-(provide 'anagram)
+(provide 'anagrams-for)
+
 ;;; anagram.el ends here
