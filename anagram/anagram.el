@@ -22,6 +22,6 @@
    candidates)
   )
 
-(provide 'anagrams-for)
+(provide 'anagram)
 
 ;;; anagram.el ends here
