@@ -5,7 +5,7 @@
 ;;; Code:
 
 (defsubst word-sig (word)
-  (sort (mapcar 'char-to-string word) 'string-lessp)
+  (seq-sort #'< word)
   )
 
 (defun anagrams-for (word candidates)
